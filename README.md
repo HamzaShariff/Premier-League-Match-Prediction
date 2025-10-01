@@ -19,7 +19,6 @@ Binary **Win vs. Not-Win (Draw/Loss)** prediction for Premier League matches usi
 - Rolling form features (per team, window=3, prior matches only):
   - Rolling means of `gf, ga, sh, sot, dist, fk, pk, pkatt`.
 
-**What are “rolling form” features?**
 We summarize a team’s **recent form** by averaging stats from its **previous 3 matches** (window=3), computed **before** the current match (shifted by 1 to avoid data leakage).
 
 Feature names in the notebook: `rolling_sh`, `rolling_sot`, `rolling_gf`, `rolling_ga`, `rolling_dist`, `rolling_fk`, `rolling_pk`, `rolling_pkatt`.
