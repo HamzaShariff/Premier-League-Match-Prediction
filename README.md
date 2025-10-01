@@ -30,10 +30,12 @@ Binary **Win vs. Not-Win (Draw/Loss)** prediction for Premier League matches usi
 - **Precision (Win as positive class): 67.5%**
 
 ### What are “rolling form” features?
-We summarize a team’s **recent form** by averaging stats from its **previous 3 matches** (window=3), computed **prior to** the current match (we shift by 1 to avoid data leakage). This helps the model capture momentum/trends.
+We summarize a team’s **recent form** by averaging stats from its **previous 3 matches** (window=3), computed **before** the current match (shifted by 1 to avoid data leakage).
+
+Feature names in the notebook: `rolling_sh`, `rolling_sot`, `rolling_gf`, `rolling_ga`, `rolling_dist`, `rolling_fk`, `rolling_pk`, `rolling_pkatt`.
 
 - **gf** — Goals For (team goals scored)
-- **ga** — Goals Against (opponent goals scored)
+- **ga** — Goals Against (opponent goals)
 - **sh** — Shots
 - **sot** — Shots on Target
 - **dist** — Average shot distance
@@ -41,4 +43,4 @@ We summarize a team’s **recent form** by averaging stats from its **previous 3
 - **pk** — Penalties scored
 - **pkatt** — Penalties attempted
 
-> Example: “rolling_3_sh” is the average number of shots the team took across its last 3 matches before this match.
+> Example: `rolling_sh` is the average number of shots the team took across its last 3 matches **prior** to this match.
